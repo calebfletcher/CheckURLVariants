@@ -12,7 +12,7 @@ The format of the base URL is a very simplified version of Regex, with only the 
 - `https://www.example.com`
 
 If destinationURL is set, the output from the script changes to indicate whether the URL being tested redirects to the destination URL.
-If stripTrailingSlash is set, the check whether the final redirected URL is equal to the destination URL will ignore any trailing slashes in the redirected URL. This does not have any effect when destinationURL is not set. This argument can be set to any truthy value as defined in the Python specification regarding booleans.
+If stripTrailingSlash is set, the check whether the final redirected URL is equal to the destination URL will ignore any trailing slashes in the redirected URL. This does not have any effect when destinationURL is not set, and defaults to `True`. This argument can be set to any falsy value as defined in the Python specification regarding booleans.
 
 ## Debugging
 An internal variable named `debug` enables the debugging output of the script.
