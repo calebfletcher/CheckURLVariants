@@ -2,12 +2,15 @@ import sys
 import requests
 
 debug = False
+
+assert len(sys.argv) >= 2, "Not enough arguments.\nUsage: checkurlvariants.py (baseURL) [destinationURL] [stripTrailingSlash]"
+
 strip_trailing_slash = True
-
-assert len(sys.argv) >= 2, "Not enough arguments.\nUsage: checkurlvariants.py (baseURL) [destinationURL]"
-
 base_url = sys.argv[1]
-if len(sys.argv) >= 3:
+if len(sys.argv) >= 4:
+    strip_trailing_slash = sys.argv[3]
+    destination = sys.argv[2]
+elif len(sys.argv) >= 3:
     destination = sys.argv[2]
 else:
     destination = None
